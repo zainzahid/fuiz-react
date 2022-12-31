@@ -1,13 +1,8 @@
-import React from 'react';
 import './Welcome.css';
 
-type WelcomeProps = {
-  quizType: string;
-};
-
-export function Welcome({ quizType }: WelcomeProps) {
+export function Welcome({ quizType, moveToCreationPhase }: {quizType: string, moveToCreationPhase(): void}) {
   return (
-    <div className="welcome-box container mt-1">
+    <div className="quiz-box container mt-1">
       <div className="quiz-items-box">
         <h1 className="py-1">Take the Friendship Challenge Quiz to See Who Knows You Best!</h1>
         <div className="py-1">
@@ -18,7 +13,7 @@ export function Welcome({ quizType }: WelcomeProps) {
             <p>5. Share the link with your friends.</p>
             <p>6. Come back to the same link to see the results.</p>
         </div>
-        <button type='button' className="button py-1">Start</button>
+        <button type='button' className="button py-1" onClick={moveToCreationPhase}>Start</button>
       </div>
     </div>
   );

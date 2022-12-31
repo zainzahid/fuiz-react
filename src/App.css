@@ -11,3 +11,39 @@ body {
     margin: 0 .5rem;
   }  
 }
+
+.quiz-box {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 64px 32px;
+  line-height: 1.5rem;
+  box-shadow: 0 0 1px 1px lightgrey;
+  border: 1px solid lightgrey;
+  border-radius: 0;
+}
+.quiz-box h1 {
+  font-size: 25px;
+  line-height: 2.5rem;
+}
+.quiz-box p {
+  font-size: 15px;
+  line-height: 2rem;
+}
+
+@media (max-width: 768px) {
+.quiz-box {
+  padding: 32px 12px;
+}
+.quiz-box h1 {
+  font-size: 22px;
+  line-height: 2.5rem;
+}
+.quiz-box p {
+  font-size: 15px;
+  line-height: 2rem;
+  text-align: left;
+}
+}

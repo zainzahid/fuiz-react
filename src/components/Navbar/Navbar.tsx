@@ -1,7 +1,7 @@
 import React from 'react';
 import './Navbar.css';
 
-function Navbar() {
+export function Navbar() {
   return (
     <nav className="navbar">
       <img src="/quiz-icon.png" alt="Quiz icon" />
@@ -19,5 +19,3 @@ function Navbar() {
     </nav>
   );
 }
-
-export default Navbar;
