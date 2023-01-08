@@ -4,7 +4,7 @@ import './Navbar.css';
 export function Navbar() {
   return (
     <nav className="navbar">
-      <img src="/quiz-icon.png" alt="Quiz icon" />
+      <a href="/"><img src="src/assets/fuiz-logo.svg" alt="Quiz icon" /></a>
       <ul className="nav-links">
         <li className="nav-link">My Quiz</li>
         <li className="nav-link dropdown">

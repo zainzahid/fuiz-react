@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Quiz } from "../../App";
+import './QuizForm.css';
 
 const QuizForm: React.FC<{
   quiz: Quiz;
@@ -58,43 +59,44 @@ const QuizForm: React.FC<{
   return (
     <div className="quiz-box container mt-1">
       {currentStep === 1 && (
-        <form>
-          <input type="text" placeholder="Your Name" onChange={handleNameChange} />
+        <form className="form">
+          <input type="text" placeholder="Your Name" onChange={handleNameChange} className="form-input" />
           { nameError && <p style={{ color: 'red' }}>{nameError}</p>}
-          <div>
+          <div className="form-gender-radios">
             <input type="radio" name="gender" value="male" /> Male
-            <input type="radio" name="gender" value="female" /> Female
+            <input type="radio" name="gender" value="female" className="ml-1" /> Female
           </div>
-          <button type="button" onClick={handleNext}>
+          <button type="button" onClick={handleNext} className="form-button">
             Next
           </button>
         </form>
       )}
       {currentStep > 1 && currentStep <= 11 && (
-        <form>
+        <form className="form">
           <h1>Question {currentStep - 1} of 10</h1>
           <p>{currentQuestion.statement}</p>
-          {currentQuestion.answers.map((answer) => (
+          {currentQuestion.answers.map((answer, index) => (
             <div>
               <input
                 type="radio"
                 name="answer"
                 value={answer}
+                id={index.toString()}
                 onChange={handleAnswerChange}
               />
-              {answer}
+              <label htmlFor={index.toString()} className="ml-q"></label>{answer}
             </div>
           ))}
           <a href="#" onClick={handleSkip}>
             Skip this question
           </a>
           {currentStep < 11 && (
-            <button type="button" onClick={handleNext}>
+            <button type="button" className="form-button" onClick={handleNext}>
               Next
             </button>
           )}
           {currentStep === 11 && (
-            <button type="button" onClick={handleFinish}>
+            <button type="button" className="form-button" onClick={handleFinish}>
               Finish
             </button>
           )}
